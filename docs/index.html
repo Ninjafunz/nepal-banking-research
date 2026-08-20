@@ -70,44 +70,44 @@ footer{padding:40px 0;text-align:center;color:var(--muted);font-size:0.85rem;bor
 <li><a href="#overview" class="active">Overview</a></li>
 <li><a href="#profitability">Profitability</a></li>
 <li><a href="#asset-quality">Asset Quality</a></li>
-<li><a href="#market-structure">Market Structure</a></li>
-<li><a href="#bank-profiles">Bank Profiles</a></li>
-<li><a href="#data-quality">Data Quality</a></li>
+<li><a href="#market">Market Structure</a></li>
+<li><a href="#profiles">Bank Profiles</a></li>
+<li><a href="#quality">Data Quality</a></li>
 <li><a href="#methodology">Methodology</a></li>
 <li><a href="#download">Download</a></li>
 </ul></nav>
 <section id="overview"><div class="container">
 <h2 class="section-title">Executive Summary</h2>
 <p class="section-sub">Key industry trends across Nepal's commercial banking sector</p>
-<div class="grid grid-4" id="kpi-cards"></div>
+<div class="grid grid-4" id="kpi"></div>
 </div></section>
 <section id="profitability"><div class="container">
 <h2 class="section-title">Profitability Trends</h2>
 <p class="section-sub">Return on assets, return on equity, and net interest margin</p>
-<div class="grid grid-2"><div class="chart" id="chart-roa"></div><div class="chart" id="chart-roe"></div></div>
-<div class="grid grid-2"><div class="chart" id="chart-nim"></div><div class="chart" id="chart-profit"></div></div>
+<div class="grid grid-2"><div class="chart" id="c-roa"></div><div class="chart" id="c-roe"></div></div>
+<div class="grid grid-2"><div class="chart" id="c-nim"></div><div class="chart" id="c-pat"></div></div>
 </div></section>
 <section id="asset-quality"><div class="container">
 <h2 class="section-title">Asset Quality & Capital Adequacy</h2>
 <p class="section-sub">Non-performing loan ratios and capital adequacy</p>
-<div class="grid grid-2"><div class="chart" id="chart-npl"></div><div class="chart" id="chart-car"></div></div>
-<div class="card"><h3>NPL by Bank (where available)</h3><div class="chart" id="chart-npl-banks" style="height:500px"></div></div>
+<div class="grid grid-2"><div class="chart" id="c-npl"></div><div class="chart" id="c-car"></div></div>
+<div class="card"><h3>NPL by Bank (where available)</h3><div class="chart" id="c-nplb" style="height:500px"></div></div>
 </div></section>
-<section id="market-structure"><div class="container">
+<section id="market"><div class="container">
 <h2 class="section-title">Market Structure & Concentration</h2>
 <p class="section-sub">Asset market shares and Herfindahl-Hirschman Index</p>
-<div class="grid grid-2"><div class="chart" id="chart-hhi"></div><div class="chart" id="chart-top10"></div></div>
+<div class="grid grid-2"><div class="chart" id="c-hhi"></div><div class="chart" id="c-top"></div></div>
 </div></section>
-<section id="bank-profiles"><div class="container">
+<section id="profiles"><div class="container">
 <h2 class="section-title">Bank Profiles</h2>
 <p class="section-sub">Comparative analysis across all 23 commercial banks</p>
-<div class="card"><div class="tabs" id="bank-tabs"></div><div class="chart" id="chart-bank-compare" style="height:450px"></div></div>
-<div class="card"><h3>Full Dataset (FY2025)</h3><div class="table-wrap" id="full-table-wrap"></div></div>
+<div class="card"><div class="tabs" id="bt"></div><div class="chart" id="c-comp" style="height:450px"></div></div>
+<div class="card"><h3>Full Dataset (FY2025)</h3><div class="table-wrap" id="ftable"></div></div>
 </div></section>
-<section id="data-quality"><div class="container">
+<section id="quality"><div class="container">
 <h2 class="section-title">Data Quality</h2>
 <p class="section-sub">Fill rates for each indicator</p>
-<div id="quality-bars"></div>
+<div id="qbars"></div>
 </div></section>
 <section id="methodology"><div class="container">
 <h2 class="section-title">Methodology</h2>
