@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nepal Commercial Banking Research | FY2020-FY2025</title>
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--accent:#38bdf8;--accent2:#818cf8;--text:#e2e8f0;--muted:#94a3b8;--green:#4ade80;--red:#f87171;--yellow:#fbbf24;--border:#334155}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#0f172a 100%);padding:80px 0 60px;text-align:center;border-bottom:1px solid var(--border)}
+.hero h1{font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:700px;margin:0 auto}
+.hero .stats{display:flex;justify-content:center;gap:40px;margin-top:32px;flex-wrap:wrap}
+.hero .stat{text-align:center}
+.hero .stat .num{font-size:2.2rem;font-weight:700;color:var(--accent)}
+.hero .stat .label{font-size:0.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+nav{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+nav ul{display:flex;gap:0;list-style:none;justify-content:center;flex-wrap:wrap}
+nav a{display:block;padding:14px 20px;color:var(--muted);font-size:0.9rem;font-weight:500;transition:all 0.2s}
+nav a:hover,nav a.active{color:var(--accent);background:rgba(56,189,248,0.05);text-decoration:none}
+section{padding:60px 0;border-bottom:1px solid var(--border)}
+section:last-child{border-bottom:none}
+.section-title{font-size:1.8rem;font-weight:700;margin-bottom:8px}
+.section-sub{color:var(--muted);margin-bottom:32px;font-size:1rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:20px}
+.card h3{font-size:1.1rem;margin-bottom:12px;color:var(--accent)}
+.grid{display:grid;gap:20px}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(350px,1fr))}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.grid-4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.metric{text-align:center;padding:20px}
+.metric .value{font-size:1.8rem;font-weight:700}
+.metric .label{font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-top:4px}
+.metric.green .value{color:var(--green)}.metric.yellow .value{color:var(--yellow)}.metric.red .value{color:var(--red)}
+table{width:100%;border-collapse:collapse;font-size:0.85rem}
+th{text-align:left;padding:10px 12px;background:rgba(56,189,248,0.08);color:var(--accent);font-weight:600;border-bottom:2px solid var(--border);white-space:nowrap;position:sticky;top:52px}
+td{padding:8px 12px;border-bottom:1px solid var(--border);white-space:nowrap}
+tr:hover{background:rgba(56,189,248,0.03)}
+.table-wrap{overflow-x:auto;max-height:500px;overflow-y:auto;border-radius:8px;border:1px solid var(--border)}
+.chart{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:20px}
+.quality-bar{height:8px;background:var(--border);border-radius:4px;overflow:hidden;margin:4px 0}
+.quality-fill{height:100%;border-radius:4px}
+.quality-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;font-size:0.85rem}
+.method-step{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--border)}
+.method-step:last-child{border-bottom:none}
+.method-num{width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--bg);display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+.method-text h4{margin-bottom:4px}.method-text p{color:var(--muted);font-size:0.9rem}
+.tabs{display:flex;gap:4px;margin-bottom:20px;flex-wrap:wrap}
+.tab{padding:8px 16px;border-radius:8px;cursor:pointer;font-size:0.85rem;background:var(--card);border:1px solid var(--border);color:var(--muted);transition:all 0.2s}
+.tab.active,.tab:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+footer{padding:40px 0;text-align:center;color:var(--muted);font-size:0.85rem;border-top:1px solid var(--border)}
+@media(max-width:768px){.hero h1{font-size:1.8rem}.hero .stats{gap:20px}nav ul{justify-content:flex-start;overflow-x:auto}.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="hero"><div class="container">
+<h1>Nepal Commercial Banking Research</h1>
+<p>A comprehensive benchmark research dataset covering 23 Class A commercial banks over FY2020-FY2025, built from authentic Nepal Rastra Bank supervision reports and bank annual reports.</p>
+<div class="stats">
+<div class="stat"><div class="num">23</div><div class="label">Banks</div></div>
+<div class="stat"><div class="num">6</div><div class="label">Years</div></div>
+<div class="stat"><div class="num">138</div><div class="label">Observations</div></div>
+<div class="stat"><div class="num">116</div><div class="label">Indicators</div></div>
+</div></div></div>
+<nav><ul>
+<li><a href="#overview" class="active">Overview</a></li>
+<li><a href="#profitability">Profitability</a></li>
+<li><a href="#asset-quality">Asset Quality</a></li>
+<li><a href="#market-structure">Market Structure</a></li>
+<li><a href="#bank-profiles">Bank Profiles</a></li>
+<li><a href="#data-quality">Data Quality</a></li>
+<li><a href="#methodology">Methodology</a></li>
+<li><a href="#download">Download</a></li>
+</ul></nav>
+<section id="overview"><div class="container">
+<h2 class="section-title">Executive Summary</h2>
+<p class="section-sub">Key industry trends across Nepal's commercial banking sector</p>
+<div class="grid grid-4" id="kpi-cards"></div>
+</div></section>
+<section id="profitability"><div class="container">
+<h2 class="section-title">Profitability Trends</h2>
+<p class="section-sub">Return on assets, return on equity, and net interest margin</p>
+<div class="grid grid-2"><div class="chart" id="chart-roa"></div><div class="chart" id="chart-roe"></div></div>
+<div class="grid grid-2"><div class="chart" id="chart-nim"></div><div class="chart" id="chart-profit"></div></div>
+</div></section>
+<section id="asset-quality"><div class="container">
+<h2 class="section-title">Asset Quality & Capital Adequacy</h2>
+<p class="section-sub">Non-performing loan ratios and capital adequacy</p>
+<div class="grid grid-2"><div class="chart" id="chart-npl"></div><div class="chart" id="chart-car"></div></div>
+<div class="card"><h3>NPL by Bank (where available)</h3><div class="chart" id="chart-npl-banks" style="height:500px"></div></div>
+</div></section>
+<section id="market-structure"><div class="container">
+<h2 class="section-title">Market Structure & Concentration</h2>
+<p class="section-sub">Asset market shares and Herfindahl-Hirschman Index</p>
+<div class="grid grid-2"><div class="chart" id="chart-hhi"></div><div class="chart" id="chart-top10"></div></div>
+</div></section>
+<section id="bank-profiles"><div class="container">
+<h2 class="section-title">Bank Profiles</h2>
+<p class="section-sub">Comparative analysis across all 23 commercial banks</p>
+<div class="card"><div class="tabs" id="bank-tabs"></div><div class="chart" id="chart-bank-compare" style="height:450px"></div></div>
+<div class="card"><h3>Full Dataset (FY2025)</h3><div class="table-wrap" id="full-table-wrap"></div></div>
+</div></section>
+<section id="data-quality"><div class="container">
+<h2 class="section-title">Data Quality</h2>
+<p class="section-sub">Fill rates for each indicator</p>
+<div id="quality-bars"></div>
+</div></section>
+<section id="methodology"><div class="container">
+<h2 class="section-title">Methodology</h2>
+<p class="section-sub">From PDF extraction to validated panel</p>
+<div class="grid grid-2"><div>
+<div class="method-step"><div class="method-num">1</div><div clas
