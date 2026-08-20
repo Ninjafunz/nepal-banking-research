@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 extract_all_real_data.py
 ========================

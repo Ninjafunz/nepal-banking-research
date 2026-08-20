@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 extract_nabil_annual.py — Extract verified data from NABIL annual reports.
 

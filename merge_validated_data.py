@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 merge_validated_data.py — Replace buggy DATA/01_bank_financials.xlsx with
 validated label-matched extraction from NRB supervision reports.

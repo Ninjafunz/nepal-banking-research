@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 extract_annex8.py — Camelot CSV extractor for NRB Bank Supervision Reports.
 
