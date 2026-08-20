@@ -1,4 +1,4 @@
-"""
+﻿"""
 setup_templates.py
 ==================
 Creates all 10 Excel data-entry templates (01 to 10) plus the ANALYSIS template.
@@ -20,18 +20,6 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 # Windows Store Python stores user-installed packages in a non-standard location.
 # Inject all known candidate paths so openpyxl/pandas/etc. are always found.
-_extra_paths = glob.glob(
-    os.path.expanduser(
-        r"~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3*"
-        r"\LocalCache\local-packages\Python3*\site-packages"
-    )
-) + glob.glob(
-    os.path.expanduser(r"~\AppData\Roaming\Python\Python3*\site-packages")
-)
-for _p in _extra_paths:
-    if _p not in sys.path:
-        sys.path.insert(0, _p)
-
 from banks import BANKS, BANK_CODES, BANK_MAP, FISCAL_YEARS, MACRO_YEARS
 import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
@@ -99,7 +87,7 @@ N = len(BANK_FY_PAIRS)   # 23 banks x 6 years = 138 rows
 
 
 # ===========================================================================
-# 01 — Bank Financials
+# 01 â€” Bank Financials
 # ===========================================================================
 def create_01_bank_financials(data_dir):
     wb = openpyxl.Workbook()
@@ -140,9 +128,9 @@ def create_01_bank_financials(data_dir):
     ws_dict = wb.create_sheet("data_dictionary")
     ws_dict.append(["Field", "Description", "Unit", "Source Priority"])
     dict_rows = [
-        ("bank_code",          "NRB/NEPSE standard bank ticker",      "—",          "—"),
-        ("bank_name",          "Full registered name",                "—",          "—"),
-        ("fy",                 "Fiscal year end (Gregorian)",         "Year",       "—"),
+        ("bank_code",          "NRB/NEPSE standard bank ticker",      "â€”",          "â€”"),
+        ("bank_name",          "Full registered name",                "â€”",          "â€”"),
+        ("fy",                 "Fiscal year end (Gregorian)",         "Year",       "â€”"),
         ("total_assets",       "Total balance sheet assets",          "NPR millions","NRB > AnnualReport"),
         ("cash_bank_balances", "Cash + balances with NRB & banks",   "NPR millions","NRB > AnnualReport"),
         ("investments",        "Securities + government bonds",       "NPR millions","NRB > AnnualReport"),
@@ -176,7 +164,7 @@ def create_01_bank_financials(data_dir):
 
 
 # ===========================================================================
-# 02 — Bank Ratios (auto-generated shell only)
+# 02 â€” Bank Ratios (auto-generated shell only)
 # ===========================================================================
 def create_02_bank_ratios(data_dir):
     wb = openpyxl.Workbook()
@@ -219,7 +207,7 @@ def create_02_bank_ratios(data_dir):
 
 
 # ===========================================================================
-# 03 — Market Shares (auto-generated shell only)
+# 03 â€” Market Shares (auto-generated shell only)
 # ===========================================================================
 def create_03_market_shares(data_dir):
     wb = openpyxl.Workbook()
@@ -267,7 +255,7 @@ def create_03_market_shares(data_dir):
 
 
 # ===========================================================================
-# 04 — Operating Metrics
+# 04 â€” Operating Metrics
 # ===========================================================================
 def create_04_operating_metrics(data_dir):
     wb = openpyxl.Workbook()
@@ -294,7 +282,7 @@ def create_04_operating_metrics(data_dir):
 
 
 # ===========================================================================
-# 05 — Loan Composition
+# 05 â€” Loan Composition
 # ===========================================================================
 def create_05_loan_composition(data_dir):
     wb = openpyxl.Workbook()
@@ -325,7 +313,7 @@ def create_05_loan_composition(data_dir):
 
 
 # ===========================================================================
-# 06 — Deposit Composition
+# 06 â€” Deposit Composition
 # ===========================================================================
 def create_06_deposit_composition(data_dir):
     wb = openpyxl.Workbook()
@@ -353,7 +341,7 @@ def create_06_deposit_composition(data_dir):
 
 
 # ===========================================================================
-# 07 — Macro Indicators
+# 07 â€” Macro Indicators
 # ===========================================================================
 def create_07_macro_indicators(data_dir):
     wb = openpyxl.Workbook()
@@ -387,7 +375,7 @@ def create_07_macro_indicators(data_dir):
 
 
 # ===========================================================================
-# 08 — Market Data (listed banks)
+# 08 â€” Market Data (listed banks)
 # ===========================================================================
 def create_08_market_data(data_dir):
     wb = openpyxl.Workbook()
@@ -421,7 +409,7 @@ def create_08_market_data(data_dir):
 
 
 # ===========================================================================
-# 09 — Strategic Coding
+# 09 â€” Strategic Coding
 # ===========================================================================
 def create_09_strategic_coding(data_dir):
     wb = openpyxl.Workbook()
@@ -477,7 +465,7 @@ def create_09_strategic_coding(data_dir):
     # Sheet 3: Coding methodology
     ws_meth = wb.create_sheet("methodology")
     rows = [
-        ["CODING METHODOLOGY — 09_strategic_coding.xlsx"],
+        ["CODING METHODOLOGY â€” 09_strategic_coding.xlsx"],
         [],
         ["PRINCIPLE: All codes must be evidence-based. Cite the source in evidence_notes."],
         [],
@@ -506,7 +494,7 @@ def create_09_strategic_coding(data_dir):
 
 
 # ===========================================================================
-# 10 — Bank Events
+# 10 â€” Bank Events
 # ===========================================================================
 def create_10_bank_events(data_dir):
     wb = openpyxl.Workbook()
@@ -548,7 +536,7 @@ def create_10_bank_events(data_dir):
 
 
 # ===========================================================================
-# ANALYSIS — Industry Structure
+# ANALYSIS â€” Industry Structure
 # ===========================================================================
 def create_analysis_template(analysis_dir):
     wb = openpyxl.Workbook()
@@ -580,7 +568,7 @@ if __name__ == "__main__":
     data_dir     = os.path.join(base, "DATA")
     analysis_dir = os.path.join(base, "ANALYSIS")
 
-    print("Nepal Banking Research — Creating Excel templates...\n")
+    print("Nepal Banking Research â€” Creating Excel templates...\n")
     create_01_bank_financials(data_dir)
     create_02_bank_ratios(data_dir)
     create_03_market_shares(data_dir)
@@ -598,3 +586,4 @@ if __name__ == "__main__":
     print(f"  ANALYSIS dir: {analysis_dir}")
     print("\nNext step: Run calculate_ratios.py and calculate_market_shares.py")
     print("after populating 01_bank_financials.xlsx and 04_operating_metrics.xlsx.")
+

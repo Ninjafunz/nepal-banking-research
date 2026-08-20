@@ -1,9 +1,4 @@
-﻿import glob as _glob, os as _os
-for _p in _glob.glob(_os.path.expanduser(r"~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3*\LocalCache\local-packages\Python3*\site-packages")) + _glob.glob(_os.path.expanduser(r"~\AppData\Roaming\Python\Python3*\site-packages")):
-    import sys as _sys
-    if _p not in _sys.path: _sys.path.insert(0, _p)
-
-import sys, os
+﻿import sys, os
 import pandas as pd
 import openpyxl
 
@@ -158,3 +153,4 @@ events_path = os.path.join(DATA, "10_bank_events.xlsx")
 with pd.ExcelWriter(events_path, engine="openpyxl", mode="a", if_sheet_exists="replace") as writer:
     df_events.to_excel(writer, sheet_name="events", index=False)
 print(f"Updated: {events_path} with {len(df_events)} events.")
+

@@ -1,0 +1,24 @@
+﻿bank_code,bank_name,ticker,is_state_owned,is_listed,active_in_2025,merger_history,surviving_entity_code
+NBL,Nepal Bank Limited,NBL,True,True,True,Pioneer commercial bank established 1937,NBL
+RBB,Rastriya Banijya Bank,RBB,True,False,True,100% Government-owned; merged NIDC Development Bank in 2018,RBB
+ADBL,Agriculture Development Bank,ADBL,True,True,True,State-majority owned; specialized agricultural & rural banking,ADBL
+NABIL,Nabil Bank,NABIL,False,True,True,"Acquired Nepal Bangladesh Bank (NBB) in July 2022 (FY2022)",NABIL
+NIMB,Nepal Investment Mega Bank,NIMB,False,True,True,"Formed from merger of Nepal Investment Bank (NIBL) and Mega Bank in Jan 2023 (FY2023)",NIMB
+SCB,Standard Chartered Bank Nepal,SCB,False,True,True,Subsidiary of Standard Chartered PLC (multinational),SCB
+HBL,Himalayan Bank,HBL,False,True,True,"Acquired Civil Bank Limited in Feb 2023 (FY2023)",HBL
+SBI,Nepal SBI Bank,SBI,False,True,True,Joint venture with State Bank of India,SBI
+EBL,Everest Bank,EBL,False,True,True,Joint venture with Punjab National Bank India,EBL
+BOKL,Bank of Kathmandu,BOKL,False,True,False,"Merged into Global IME Bank (GIBL) in Jan 2023 (FY2023)",GIBL
+NICA,NIC Asia Bank,NICA,False,True,True,"Merged NIC Bank and Bank of Asia in 2013; standalone in FY20-25",NICA
+MBL,Machhapuchchhre Bank,MBL,False,True,True,Merged with Standard Finance & APEX in earlier years; standalone in FY20-25,MBL
+KBL,Kumari Bank,KBL,False,True,True,"Merged with Nepal Credit and Commerce (NCC) Bank in Jan 2023 (FY2023)",KBL
+LLBS,Laxmi Sunrise Bank,LLBS,False,True,True,"Formed from merger of Laxmi Bank and Sunrise Bank in July 2023 (FY2024)",LLBS
+CIVIL,Civil Bank,CIVIL,False,True,False,"Acquired by Himalayan Bank (HBL) in Feb 2023 (FY2023)",HBL
+CCBL,Century Commercial Bank,CCBL,False,True,False,"Merged into Prabhu Bank (PRVU) in Jan 2023 (FY2023)",PRVU
+SANIMA,Sanima Bank,SANIMA,False,True,True,Upgraded to Class A in 2012; standalone throughout FY20-25,SANIMA
+SBL,Siddhartha Bank,SBL,False,True,True,Established 2002; standalone throughout FY20-25,SBL
+GIBL,Global IME Bank,GIBL,False,True,True,"Merged with Janata Bank (Dec 2019) and Bank of Kathmandu (Jan 2023)",GIBL
+PCBL,Prime Commercial Bank,PCBL,False,True,True,"Acquired Kankai, Lalitpur Finance & Kailash Bikas Bank in earlier years; standalone in FY20-25",PCBL
+PRVU,Prabhu Bank,PRVU,False,True,True,"Merged with Century Commercial Bank (CCBL) in Jan 2023 (FY2023)",PRVU
+CZBIL,Citizens Bank International,CZBIL,False,True,True,"Acquired Sahayogi, Tinau Mission & Srijana Finance; standalone in FY20-25",CZBIL
+NMB,NMB Bank,NMB,False,True,True,"Merged with Clean Energy, Bhrikuti, Prudential & Om Development Bank; standalone in FY20-25",NMB

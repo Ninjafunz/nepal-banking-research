@@ -1,9 +1,4 @@
-﻿import glob as _glob, os as _os
-for _p in _glob.glob(_os.path.expanduser(r"~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3*\LocalCache\local-packages\Python3*\site-packages")) + _glob.glob(_os.path.expanduser(r"~\AppData\Roaming\Python\Python3*\site-packages")):
-    import sys as _sys
-    if _p not in _sys.path: _sys.path.insert(0, _p)
-
-"""
+﻿"""
 fetch_nrb_data.py
 =================
 Downloads NRB Banking & Financial Statistics PDFs and attempts to extract
@@ -154,3 +149,4 @@ def run():
 
 if __name__ == "__main__":
     run()
+

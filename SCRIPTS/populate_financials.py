@@ -1,9 +1,4 @@
-﻿import glob as _glob, os as _os
-for _p in _glob.glob(_os.path.expanduser(r"~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3*\LocalCache\local-packages\Python3*\site-packages")) + _glob.glob(_os.path.expanduser(r"~\AppData\Roaming\Python\Python3*\site-packages")):
-    import sys as _sys
-    if _p not in _sys.path: _sys.path.insert(0, _p)
-
-import sys, os
+﻿import sys, os
 import pandas as pd
 import numpy as np
 import openpyxl
@@ -176,3 +171,4 @@ with pd.ExcelWriter(op_path, engine="openpyxl", mode="a", if_sheet_exists="repla
 
 print(f"Populated {fin_path}: balance_sheet ({len(df_bs)} rows), income_statement ({len(df_is)} rows).")
 print(f"Populated {op_path}: operating_metrics ({len(df_op)} rows).")
+

@@ -1,9 +1,4 @@
-﻿import glob as _glob, os as _os
-for _p in _glob.glob(_os.path.expanduser(r"~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3*\LocalCache\local-packages\Python3*\site-packages")) + _glob.glob(_os.path.expanduser(r"~\AppData\Roaming\Python\Python3*\site-packages")):
-    import sys as _sys
-    if _p not in _sys.path: _sys.path.insert(0, _p)
-
-import sys, os
+﻿import sys, os
 import pandas as pd
 import openpyxl
 from banks import BANKS, FISCAL_YEARS, BANK_MAP
@@ -100,3 +95,4 @@ with pd.ExcelWriter(strat_path, engine="openpyxl", mode="a", if_sheet_exists="re
     df_strat.to_excel(writer, sheet_name="strategic_priorities", index=False)
 
 print(f"Updated: {strat_path} (digital scorecard: {len(df_dig)} rows, strategic priorities: {len(df_strat)} rows).")
+

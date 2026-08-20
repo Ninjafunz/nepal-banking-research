@@ -1,4 +1,4 @@
-﻿# Python
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -40,6 +40,45 @@ Desktop.ini
 $RECYCLE.BIN/
 .DS_Store
 
-# Temporary / Scratch data if any
+# Temporary / Scratch
 *.tmp
 *.temp
+
+# Large data files (too big for git)
+combined_excel.xlsx
+*_table_*.csv
+*.pdf
+
+# Camelot extraction intermediate CSVs
+*_extracted.csv
+*_tables.csv
+
+# pdftotext output
+*.txt
+!README.md
+!data_dictionary.md
+!TEMPLATE_INSTRUCTIONS.md
+
+# Extraction intermediates
+extracted_*.csv
+nrb*.txt
+TEMPLATE_DATA.xlsx
+
+# One-off fix scripts (replaced by extract_annex8.py)
+add_missing_columns.py
+add_sheets.py
+ensure_columns.py
+fix_sheets.py
+prepare_data.py
+inspect_csvs.py
+map_pdf_data.py
+load_all_bank_data.py
+load_real_data.py
+extract_pdf_camelot.py
+extract_pdf_data.py
+find_annex_tables.py
+fill_nan_data.py
+fill_from_template.py
+generate_template.py
+process_nepse_downloads.py
+extract_nepse_data.py
