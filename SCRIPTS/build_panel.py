@@ -4,18 +4,18 @@ build_panel.py — Master Panel Builder & Multi-Format Research Exporter (.xlsx,
 
 import os
 import sys
+
 import pandas as pd
-import numpy as np
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE not in sys.path:
     sys.path.insert(0, BASE)
 
+import SCRIPTS.calculate_market_shares as cms
+import SCRIPTS.calculate_ratios as cr
 from config.config_loader import load_config
 from SCRIPTS.banks import BANKS, FISCAL_YEARS
 from SCRIPTS.validators import run_all_validations
-import SCRIPTS.calculate_ratios as cr
-import SCRIPTS.calculate_market_shares as cms
 
 CFG = load_config()
 DATA = os.path.join(BASE, "DATA")

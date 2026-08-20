@@ -4,7 +4,9 @@ Loads from bank_registry.csv and config.yaml.
 """
 
 import os
+
 import pandas as pd
+
 from config.config_loader import load_config
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

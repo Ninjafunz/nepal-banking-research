@@ -1,8 +1,7 @@
-﻿import os
-import pytest
-import pandas as pd
-from tests.generate_mock_data import generate_synthetic_fixture
+﻿import pandas as pd
+
 from SCRIPTS.build_panel import build
+
 
 def test_end_to_end_panel_build(tmp_path):
     # Verify building panel executes cleanly and outputs valid dataframe

@@ -4,8 +4,8 @@ generate_descriptives.py — Generates publication-grade descriptive statistics 
 
 import os
 import sys
+
 import pandas as pd
-import numpy as np
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE not in sys.path:
@@ -80,8 +80,7 @@ def generate_summary_tables():
         f.write("\\label{tab:summary_stats}\n")
         f.write("\\begin{tabular}{lrrrrrrrr}\n\\hline\\hline\n")
         f.write("Variable & N & Mean & SD & Min & P25 & Median & P75 & Max \\\\\n\\hline\n")
-        for _, r in summary_df.iterrows():
-            f.write(f"{r['Variable']} & {r['Obs']} & {r['Mean']} & {r['Std Dev']} & {r['Min']} & {r['P25']} & {r['Median']} & {r['P75']} & {r['Max']} \\\\\n")
+        f.writelines(f"{r['Variable']} & {r['Obs']} & {r['Mean']} & {r['Std Dev']} & {r['Min']} & {r['P25']} & {r['Median']} & {r['P75']} & {r['Max']} \\\\\n" for _, r in summary_df.iterrows())
         f.write("\\hline\\hline\n\\end{tabular}\n")
         f.write("\\begin{tablenotes}\n\\small\n\\item \\textit{Notes:} Sample covers 23 licensed Class A commercial banks in Nepal across FY2020--FY2025. Monetary values in NPR millions. Ratios in percent.\n\\end{tablenotes}\n")
         f.write("\\end{table}\n")

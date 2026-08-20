@@ -15,9 +15,9 @@ IMPORTANT: This only touches rows where we have source PDF data.
 FY2017-2018 data (no source PDFs) is preserved unchanged.
 """
 
-import pandas as pd
-import numpy as np
 from pathlib import Path
+
+import pandas as pd
 
 ROOT = Path(__file__).parent
 DATA = ROOT / "DATA"

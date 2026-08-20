@@ -1,7 +1,9 @@
-﻿import pytest
+﻿import numpy as np
 import pandas as pd
-import numpy as np
-from SCRIPTS.calculate_ratios import safe_div, avg_balance, yoy_growth
+import pytest
+
+from SCRIPTS.calculate_ratios import avg_balance, safe_div, yoy_growth
+
 
 def test_safe_div_zero_and_nan():
     a = pd.Series([10.0, 20.0, 30.0])

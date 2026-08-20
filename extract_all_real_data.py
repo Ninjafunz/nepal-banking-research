@@ -18,13 +18,13 @@ Pipeline schema (what build expects):
   10_bank_events.xlsx      → events
 """
 
-import os
-import sys
-import re
 import math
-import pandas as pd
-import numpy as np
+import os
+import re
 from collections import defaultdict
+
+import numpy as np
+import pandas as pd
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(BASE, "DATA")
@@ -524,49 +524,49 @@ def extract_from_report(report_meta):
             due_nrb = get_val(items, "due from nepal rastra bank", col_idx=fy_idx)
             placements = get_val(items, "placement with bank and financial", col_idx=fy_idx)
             due_bfis = get_val(items, "due from bank and financial", col_idx=fy_idx)
-            prop_equip = get_val(items, "property and equipment", col_idx=fy_idx)
-            prop_equip2 = get_val(items, "property & equipment", col_idx=fy_idx)
-            other_assets = get_val(items, "other assets", col_idx=fy_idx)
-            goodwill = get_val(items, "goodwill", col_idx=fy_idx)
+            get_val(items, "property and equipment", col_idx=fy_idx)
+            get_val(items, "property & equipment", col_idx=fy_idx)
+            get_val(items, "other assets", col_idx=fy_idx)
+            get_val(items, "goodwill", col_idx=fy_idx)
             liab_total = get_val(items, "liabilities", col_idx=fy_idx)
-            due_to_bfis = get_val(items, "due to bank and financial", col_idx=fy_idx)
+            get_val(items, "due to bank and financial", col_idx=fy_idx)
             borrowings_val = get_val(items, "borrowing", col_idx=fy_idx)
-            debt_securities = get_val(items, "debt securities issued", col_idx=fy_idx)
-            sub_liab = get_val(items, "subordinated liabilities", col_idx=fy_idx)
-            other_liab = get_val(items, "other liabilities", col_idx=fy_idx)
-            deferred_tax_liab = get_val(items, "deferred tax liabilities", col_idx=fy_idx)
+            get_val(items, "debt securities issued", col_idx=fy_idx)
+            get_val(items, "subordinated liabilities", col_idx=fy_idx)
+            get_val(items, "other liabilities", col_idx=fy_idx)
+            get_val(items, "deferred tax liabilities", col_idx=fy_idx)
             provisions_val = get_val(items, "provisions", col_idx=fy_idx)
-            tax_liab = get_val(items, "current tax liabilities", col_idx=fy_idx)
-            derivatives_asset = get_val(items, "derivative financial instruments", col_idx=fy_idx)
+            get_val(items, "current tax liabilities", col_idx=fy_idx)
+            get_val(items, "derivative financial instruments", col_idx=fy_idx)
 
             # Income Statement items
             interest_income = get_val(items, "interest income", col_idx=fy_idx)
             interest_expense = get_val(items, "interest expense", col_idx=fy_idx)
             nii = get_val(items, "net interest income", col_idx=fy_idx)
-            fee_income = get_val(items, "fee and commission income", col_idx=fy_idx)
-            fee_expense = get_val(items, "fee and commission expense", col_idx=fy_idx)
+            get_val(items, "fee and commission income", col_idx=fy_idx)
+            get_val(items, "fee and commission expense", col_idx=fy_idx)
             net_fee = get_val(items, "net fee and commission income", col_idx=fy_idx)
-            net_fee2 = get_val(items, "net fee and commission income", col_idx=fy_idx)
+            get_val(items, "net fee and commission income", col_idx=fy_idx)
             if pd.isna(net_fee):
                 net_fee = get_val(items, "net fee and commission", col_idx=fy_idx)
-            net_int_fee = get_val(items, "net interest, fee and commission", col_idx=fy_idx)
+            get_val(items, "net interest, fee and commission", col_idx=fy_idx)
             net_trading = get_val(items, "net trading income", col_idx=fy_idx)
             other_op_income = get_val(items, "other operating income", col_idx=fy_idx)
             total_op_income = get_val(items, "total operating income", col_idx=fy_idx)
             impairment = get_val(items, "impairment charge", col_idx=fy_idx)
-            net_op_income = get_val(items, "net operating income", col_idx=fy_idx)
+            get_val(items, "net operating income", col_idx=fy_idx)
             personnel = get_val(items, "personnel expenses", col_idx=fy_idx)
             other_op_exp = get_val(items, "other operating expense", col_idx=fy_idx)
             other_op_exp2 = get_val(items, "other operating expenses", col_idx=fy_idx)
             if pd.isna(other_op_exp):
                 other_op_exp = other_op_exp2
             depreciation = get_val(items, "depreciation", col_idx=fy_idx)
-            operating_profit = get_val(items, "operating profit", col_idx=fy_idx)
-            non_op_income = get_val(items, "non operating income", col_idx=fy_idx)
-            non_op_expense = get_val(items, "non operating expense", col_idx=fy_idx)
+            get_val(items, "operating profit", col_idx=fy_idx)
+            get_val(items, "non operating income", col_idx=fy_idx)
+            get_val(items, "non operating expense", col_idx=fy_idx)
             pbt = get_val(items, "profit before income tax", col_idx=fy_idx)
-            current_tax = get_val(items, "current tax", col_idx=fy_idx)
-            deferred_tax = get_val(items, "deferred tax", col_idx=fy_idx)
+            get_val(items, "current tax", col_idx=fy_idx)
+            get_val(items, "deferred tax", col_idx=fy_idx)
             profit = get_val(items, "profit for the year", col_idx=fy_idx)
             if pd.isna(profit):
                 profit = get_val(items, "profit for the period", col_idx=fy_idx)
@@ -745,9 +745,9 @@ def build_operating_metrics_df(bs_df):
         bank_bs = bs_df[bs_df["bank_code"] == code].sort_values("fy")
         for _, row in bank_bs.iterrows():
             fy = int(row["fy"])
-            total_assets = row.get("total_assets")
-            gross_loans = row.get("gross_loans")
-            total_deposits = row.get("total_deposits")
+            row.get("total_assets")
+            row.get("gross_loans")
+            row.get("total_deposits")
             # Employees/branches not in NRB PDFs → leave as NaN
             rows.append({
                 "bank_code": code,
@@ -1032,9 +1032,7 @@ def main():
         for code, years in report_data.items():
             for fy, items in years.items():
                 for key, val in items.items():
-                    if key not in all_data[code][fy] or pd.isna(all_data[code][fy].get(key)):
-                        all_data[code][fy][key] = val
-                    elif not pd.isna(val) and pd.isna(all_data[code][fy].get(key)):
+                    if key not in all_data[code][fy] or pd.isna(all_data[code][fy].get(key)) or not pd.isna(val) and pd.isna(all_data[code][fy].get(key)):
                         all_data[code][fy][key] = val
 
     # Report extraction summary

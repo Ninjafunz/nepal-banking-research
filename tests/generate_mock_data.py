@@ -3,9 +3,9 @@ generate_mock_data.py — Generates a minimal 3-bank, 3-year synthetic test fixt
 """
 
 import os
-import sys
+
 import pandas as pd
-import numpy as np
+
 
 def generate_synthetic_fixture(target_dir):
     os.makedirs(target_dir, exist_ok=True)

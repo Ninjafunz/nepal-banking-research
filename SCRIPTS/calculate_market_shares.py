@@ -4,8 +4,9 @@ calculate_market_shares.py — Computes market shares, HHI, and CR-N concentrati
 
 import os
 import sys
-import pandas as pd
+
 import numpy as np
+import pandas as pd
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE not in sys.path:

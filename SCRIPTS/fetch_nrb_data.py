@@ -16,7 +16,11 @@ Usage:
     python fetch_nrb_data.py
 """
 
-import sys, os, re, json, urllib.request, urllib.error
+import os
+import sys
+import urllib.error
+import urllib.request
+
 sys.path.insert(0, os.path.dirname(__file__))
 
 BASE   = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -83,7 +87,7 @@ def try_download(urls, dest_path, label):
                         f.write(data)
                     print(f"  [OK]   {label} → {os.path.basename(path)} ({len(data)//1024} KB)")
                     return True, ext, path
-        except Exception as e:
+        except Exception:
             continue
     print(f"  [FAIL] {label} — no URL succeeded")
     return False, None, None

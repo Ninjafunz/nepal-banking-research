@@ -37,6 +37,21 @@ include = []
 line-length = 100
 target-version = "py310"
 
+[tool.ruff.lint]
+ignore = [
+    "BLE001",   # blind except — intentional for data pipeline resilience
+    "SIM102",   # collapsible if — readability preference
+    "S110",     # try-except-pass — intentional in extraction loops
+    "S112",     # try-except-continue — intentional in extraction loops
+    "PLW1510",  # subprocess.run without check — intentional
+]
+exclude = [
+    "notebooks",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"extract_*.py" = ["F841"]  # extraction scripts may have unused intermediate variables
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]

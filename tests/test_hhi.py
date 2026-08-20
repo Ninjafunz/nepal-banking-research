@@ -1,6 +1,8 @@
-﻿import pytest
-import pandas as pd
+﻿import pandas as pd
+import pytest
+
 from SCRIPTS.calculate_market_shares import compute_hhi
+
 
 def test_hhi_equal_shares():
     # 4 firms with 25% share each -> HHI = 4 * 25^2 = 2500

@@ -1,6 +1,6 @@
-﻿import sys, os
+﻿import os
+
 import pandas as pd
-import openpyxl
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(BASE, "DATA")

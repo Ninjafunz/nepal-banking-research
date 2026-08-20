@@ -11,18 +11,17 @@ Usage:
     python setup_templates.py
 """
 
-import sys
 import os
-import glob
+import sys
 
 # Add SCRIPTS dir to path so banks.py is importable when run from any directory
 sys.path.insert(0, os.path.dirname(__file__))
 
 # Windows Store Python stores user-installed packages in a non-standard location.
 # Inject all known candidate paths so openpyxl/pandas/etc. are always found.
-from banks import BANKS, BANK_CODES, BANK_MAP, FISCAL_YEARS, MACRO_YEARS
 import openpyxl
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from banks import BANK_MAP, BANKS, FISCAL_YEARS, MACRO_YEARS
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 

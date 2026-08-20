@@ -8,11 +8,14 @@ Usage:
     python fetch_macro.py
 """
 
-import sys, os, json, urllib.request
+import json
+import os
+import sys
+import urllib.request
+
 sys.path.insert(0, os.path.dirname(__file__))
 
 import pandas as pd
-import numpy as np
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(BASE, "DATA")

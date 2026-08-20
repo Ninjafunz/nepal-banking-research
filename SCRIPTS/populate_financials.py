@@ -1,8 +1,7 @@
-﻿import sys, os
+﻿import os
+
 import pandas as pd
-import numpy as np
-import openpyxl
-from banks import BANKS, FISCAL_YEARS, BANK_MAP
+from banks import BANKS, FISCAL_YEARS
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(BASE, "DATA")
@@ -149,7 +148,7 @@ for b in BANKS:
             "agent_network_points": int(branch_scale * 0.3),
             "gross_npl_pct": npl_rate,
             "net_npl_pct": round(npl_rate * 0.45, 2),
-            "provision_coverage_pct": round(min(120.0, 75.0 + ((hash(code) % 30))), 1),
+            "provision_coverage_pct": round(min(120.0, 75.0 + (hash(code) % 30)), 1),
             "car_pct": car_rate,
             "cet1_pct": round(car_rate - 2.0, 2),
             "source": "NRB / Annual Report",

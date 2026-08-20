@@ -1,6 +1,7 @@
-﻿import pytest
-import pandas as pd
+﻿import pandas as pd
+
 from SCRIPTS.validators import validate_balance_sheet, validate_ratios
+
 
 def test_validate_balance_sheet_correct():
     df = pd.DataFrame([{

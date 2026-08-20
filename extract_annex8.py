@@ -10,9 +10,12 @@ Usage:
     python3 extract_annex8.py --all
 """
 
-import re, sys, csv
-import pandas as pd
+import csv
+import re
+import sys
 from pathlib import Path
+
+import pandas as pd
 
 BANK_NAME_MAP = {
     'Nepal Bank Limited': 'NBL', 'Nepal Bank': 'NBL',

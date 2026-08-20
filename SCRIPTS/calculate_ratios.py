@@ -4,8 +4,9 @@ calculate_ratios.py — Derives financial & efficiency ratios from raw bank fina
 
 import os
 import sys
-import pandas as pd
+
 import numpy as np
+import pandas as pd
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE not in sys.path:

@@ -1,7 +1,6 @@
-﻿import sys, os
+﻿import os
+
 import pandas as pd
-import openpyxl
-from banks import BANKS, FISCAL_YEARS, BANK_MAP
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(BASE, "DATA")
@@ -108,8 +107,8 @@ for _, row in bs_df.iterrows():
             "ticker": code, "share_price_eoy": price, "market_cap": mcap,
             "pe_ratio": pe, "pb_ratio": pb, "eps": eps, "bvps": bvps,
             "dividend_per_share": dps, "dividend_yield_pct": div_yld,
-            "annual_return_pct": round(-5.0 + ((hash(code + str(fy)) % 30)), 1),
-            "price_volatility": round(15.0 + ((hash(code) % 15)), 1),
+            "annual_return_pct": round(-5.0 + (hash(code + str(fy)) % 30), 1),
+            "price_volatility": round(15.0 + (hash(code) % 15), 1),
             "shares_outstanding": shares_out,
             "source": "NEPSE / Annual Report", "notes": "NEPSE trading highlights"
         })

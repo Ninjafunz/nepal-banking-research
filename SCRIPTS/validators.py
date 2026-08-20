@@ -2,17 +2,17 @@
 validators.py — Automated Data Sanity, Accounting & Regulatory Rule Validator.
 """
 
-import os
-import pandas as pd
+
 import numpy as np
-from typing import List, Dict, Tuple
+import pandas as pd
+
 from config.config_loader import load_config
 
 CFG = load_config()
 RULES = CFG.get("validation_rules", {})
 
 
-def validate_balance_sheet(df: pd.DataFrame) -> Tuple[bool, List[str]]:
+def validate_balance_sheet(df: pd.DataFrame) -> tuple[bool, list[str]]:
     """
     Checks:
       1. total_assets > 0 for active banks
@@ -60,7 +60,7 @@ def validate_balance_sheet(df: pd.DataFrame) -> Tuple[bool, List[str]]:
     return is_valid, flags
 
 
-def validate_ratios(df: pd.DataFrame) -> Tuple[bool, List[str]]:
+def validate_ratios(df: pd.DataFrame) -> tuple[bool, list[str]]:
     flags = []
     roa_min = RULES.get("roa_min", -10.0)
     roa_max = RULES.get("roa_max", 15.0)
@@ -94,7 +94,7 @@ def validate_ratios(df: pd.DataFrame) -> Tuple[bool, List[str]]:
     return is_valid, flags
 
 
-def validate_panel_completeness(df: pd.DataFrame, expected_banks: List[str], expected_years: List[int]) -> Tuple[bool, List[str]]:
+def validate_panel_completeness(df: pd.DataFrame, expected_banks: list[str], expected_years: list[int]) -> tuple[bool, list[str]]:
     flags = []
     dupes = df[df.duplicated(subset=["bank_code", "fy"], keep=False)]
     if not dupes.empty:
@@ -102,7 +102,7 @@ def validate_panel_completeness(df: pd.DataFrame, expected_banks: List[str], exp
     return len(flags) == 0, flags
 
 
-def run_all_validations(panel_df: pd.DataFrame) -> Dict:
+def run_all_validations(panel_df: pd.DataFrame) -> dict:
     bs_valid, bs_flags = validate_balance_sheet(panel_df)
     r_valid, r_flags = validate_ratios(panel_df)
     all_flags = bs_flags + r_flags

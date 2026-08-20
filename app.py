@@ -1,9 +1,8 @@
-﻿import streamlit as st
+﻿import os
+
 import pandas as pd
-import numpy as np
 import plotly.express as px
-import plotly.graph_objects as go
-import os
+import streamlit as st
 
 # Set page configuration
 st.set_page_config(
@@ -122,7 +121,7 @@ if nav == "🏛️ Industry Overview":
         st.plotly_chart(fig_assets, use_container_width=True)
 
     with col_r:
-        st.subheader(f"Profitability vs Scale (ROA vs Assets)")
+        st.subheader("Profitability vs Scale (ROA vs Assets)")
         fig_scatter = px.scatter(
             fy_filtered,
             x="total_assets",
