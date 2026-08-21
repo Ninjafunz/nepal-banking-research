@@ -53,8 +53,9 @@ LABELS = [
     ('net_interest_income', [r'Net\s+Interest\s+Income\b'], 'is'),
     ('non_interest_income', [r'(?:Fees?\s+and\s+commission\s+income|Net\s+[Ff]ee\s+and\s+commission\s+income)'], 'is'),
     ('operating_income', [r'Total\s+operating\s+income\b'], 'is'),
-    ('operating_expenses', [r'Other\s+operating\s+expenses?\b'], 'is'),
+    ('other_operating_expenses', [r'Other\s+operating\s+expenses?\b'], 'is'),
     ('personnel_expenses', [r'Personnel\s+expenses?\b'], 'is'),
+    ('depreciation', [r'Depreciation\s*(?:&|and)\s*[Aa]mortiz(?:ation|ement)\b'], 'is'),
     ('provision_loan_losses', [r'Impairment\s+charge.*loans'], 'is'),
     ('profit_before_tax', [r'Profit\s+before\s+(?:income\s+)?tax'], 'is'),
     ('profit_after_tax', [r'Profit\s+(?:for\s+the\s+(?:period|year)|after\s+tax)'], 'is'),
@@ -161,6 +162,15 @@ def extract_bank(bank_code, tables, fy):
 
     if 'total_liabilities' not in data and 'total_assets' in data and 'shareholders_equity' in data:
         data['total_liabilities'] = data['total_assets'] - data['shareholders_equity']
+
+    # Compute operating_expenses = personnel + other operating + depreciation
+    # The NRB reports list these as 3 separate components with no 'Total operating expenses' row.
+    pers = data.get('personnel_expenses')
+    other = data.get('other_operating_expenses')
+    depr = data.get('depreciation')
+    if pers is not None and other is not None:
+        data['operating_expenses'] = pers + other + (depr if depr is not None else 0)
+
     return data
 
 
@@ -201,8 +211,8 @@ FIELDS = ['bank_code', 'bank_name', 'fy',
            'shareholders_equity', 'paid_up_capital', 'reserves',
            'interest_income', 'interest_expense', 'net_interest_income',
            'non_interest_income', 'operating_income', 'operating_expenses',
-           'personnel_expenses', 'provision_loan_losses',
-           'profit_before_tax', 'profit_after_tax', 'source', 'notes']
+           'personnel_expenses', 'other_operating_expenses', 'depreciation',
+           'provision_loan_losses', 'profit_before_tax', 'profit_after_tax', 'source', 'notes']
 
 
 def main():
